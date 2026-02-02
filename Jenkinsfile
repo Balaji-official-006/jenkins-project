@@ -24,10 +24,17 @@ pipeline {
             steps {
                 sshagent(['deploy-key']) {
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ec2-user@10.0.15.212 << EOF
-                      sudo rm -rf /usr/share/nginx/html/*
-                      sudo cp -r * /usr/share/nginx/html/
-                    EOF
+                    # Ensure target directory exists
+                    ssh -o StrictHostKeyChecking=no ec2-user@10.0.15.212 \
+                      "sudo mkdir -p /usr/share/nginx/html"
+
+                    # Copy files from Jenkins agent to EC2
+                    scp -o StrictHostKeyChecking=no -r ./* \
+                      ec2-user@10.0.15.212:/tmp/webapp
+
+                    # Move files into nginx directory
+                    ssh -o StrictHostKeyChecking=no ec2-user@10.0.15.212 \
+                      "sudo rm -rf /usr/share/nginx/html/* && sudo cp -r /tmp/webapp/* /usr/share/nginx/html/"
                     '''
                 }
             }
