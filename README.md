@@ -1,5 +1,3 @@
-# jenkins-project
-jenkins-project
 # 📘 Jenkins CI/CD Pipeline Project
 ________________________________________
 # Project Overview (Single Passage)
