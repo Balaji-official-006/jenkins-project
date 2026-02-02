@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jenkins CI/CD Deployment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 40px 50px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #00ffcc;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-weight: normal;
+            color: #cccccc;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .info {
+            margin-top: 20px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .info span {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 Jenkins CI/CD Pipeline</h1>
+        <h2>GitHub → Jenkins → EC2 Deployment</h2>
+
+        <p>
+            This web page was automatically deployed using a
+            <strong>Jenkins CI/CD pipeline</strong>.
+            The source code is hosted on GitHub, built and deployed
+            by Jenkins agents running on Amazon EC2.
+        </p>
+
+        <div class="info">
+            <p><span>Pipeline:</span> GitHub → Jenkins Master → Auto-scaling Agents → EC2</p>
+            <p><span>Deployment Type:</span> Automated CI/CD</p>
+            <p><span>Environment:</span> AWS EC2 (Amazon Linux)</p>
+            <p><span>Triggered By:</span> GitHub Commit</p>
+        </div>
+
+        <footer>
+            <p>Deployed by Jenkins | DevOps Project</p>
+        </footer>
+    </div>
+
+</body>
+</html>
