@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'autoscale-agent' }
+    agent { label 'agent-1' }
 
     stages {
 
